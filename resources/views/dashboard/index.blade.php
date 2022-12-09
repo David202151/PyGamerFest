@@ -75,6 +75,7 @@
                     <!-- /.info-box-content -->
                 </div>
                 <!-- /.info-box -->
+
             </div>
             <!-- /.col -->
             <div class="col-12 col-sm-6 col-md-3">
@@ -95,33 +96,77 @@
         </div>
         <!-- /.row -->
 
-        <div class="row">
-            <div class="col-md-12">
-                <div class="card">
-                    <div class="card-header">
-                        <h5 class="card-title">User checkin/out</h5>
+        <div class="container text-center">
+            <div class="row">
+                <div class="col-sm-5 col-md-6">
+                GRAFICO 2
+                </div>
+                <div class="col-sm-5 offset-sm-2 col-md-6 offset-md-0">
+                <div class="info-box">
+                    <span class="info-box-icon bg-warning elevation-1">
+                        <i class="fas fa-signal"></i>
+                    </span>
 
-                        <div class="card-tools">
-                            <button type="button" class="btn btn-tool" data-card-widget="collapse">
-                                <i class="fas fa-minus"></i>
-                            </button>
-                            <div class="btn-group">
-                                <button type="button" class="btn btn-tool dropdown-toggle" data-toggle="dropdown">
-                                    <i class="fas fa-wrench"></i>
-                                </button>
-                                <div class="dropdown-menu dropdown-menu-right" role="menu">
-                                    <a href="#" class="dropdown-item">Action</a>
-                                    <a href="#" class="dropdown-item">Another action</a>
-                                    <a href="#" class="dropdown-item">Something else here</a>
-                                    <a class="dropdown-divider"></a>
-                                    <a href="#" class="dropdown-item">Separated link</a>
-                                </div>
-                            </div>
-                            <button type="button" class="btn btn-tool" data-card-widget="remove">
-                                <i class="fas fa-times"></i>
-                            </button>
-                        </div>
+                    <div class="info-box-content">
+                        <span class="info-box-text">Equipos</span>
+                        <span class="info-box-number" id="user_online">{{$dashboardInfo['user_online']}}</span>
                     </div>
+                    <!-- /.info-box-content -->
+                </div>
+
+                <div class="info-box mb-3">
+                    <span class="info-box-icon bg-warning elevation-1">
+                        <i class="fas fa-signal"></i>
+                    </span>
+
+                    <div class="info-box-content">
+                        <span class="info-box-text">Equipos</span>
+                        <span class="info-box-number" id="user_online">{{$dashboardInfo['user_online']}}</span>
+                    </div>
+                    <!-- /.info-box-content -->
+                </div>
+
+                </div>
+            </div>
+        </div>
+
+
+        <div class="container text-center">
+            <div class="row">
+                <div class="col-sm-5 col-md-6">
+                GRAFICO 1
+                </div>
+                <div class="col-sm-5 offset-sm-2 col-md-6 offset-md-0">
+                <div class="info-box mb-3">
+                    <span class="info-box-icon bg-warning elevation-1">
+                        <i class="fas fa-signal"></i>
+                    </span>
+
+                    <div class="info-box-content">
+                        <span class="info-box-text">Equipos</span>
+                        <span class="info-box-number" id="user_online">{{$dashboardInfo['user_online']}}</span>
+                    </div>
+                    <!-- /.info-box-content -->
+                </div>
+
+                <div class="info-box mb-3">
+                    <span class="info-box-icon bg-warning elevation-1">
+                        <i class="fas fa-signal"></i>
+                    </span>
+
+                    <div class="info-box-content">
+                        <span class="info-box-text">Equipos</span>
+                        <span class="info-box-number" id="user_online">{{$dashboardInfo['user_online']}}</span>
+                    </div>
+                    <!-- /.info-box-content -->
+                </div>
+                
+                </div>
+            </div>
+        </div>
+
+
+        
                     <!-- /.card-header -->
                     <div class="card-body">
                         <canvas id="userCheckinChart" height="315" style="height: 180px; display: block; width: 462px;" width="808" class="chartjs-render-monitor"></canvas>
@@ -150,8 +195,7 @@
 @endpush
 @push('page_scripts')
 
-<script>
-var userCheckinChart = new Chart(document.getElementById('userCheckinChart').getContext('2d'), @json($chartUserCheckin));
-</script>
+
+
 
 @endpush

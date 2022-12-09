@@ -41,6 +41,7 @@ class DashboardRepository
         $dashboardInfo['role_count'] =  $this->roleRepository->count();
         $dashboardInfo['permission_count'] =  $this->permissionRepository->count();
         $dashboardInfo['user_online'] =  $this->attendanceRepository->CountUserOnline();
+        
         return $dashboardInfo;
     }
     private function getChartUserCheckinInfo()
