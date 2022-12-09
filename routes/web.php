@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\JugadorController;
+use App\Http\Controllers\EquipoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,3 +28,7 @@ Route::get('/checkOnline', function (App\Repositories\AttendanceRepository $atte
     if (Auth::check()) { }
     return $attendanceRepo->CountUserOnline();
 })->name('checkOnline');
+
+Route::get('/jugadores', [JugadorController::class, 'index'])->name('jugadores');
+
+Route::get('/equipo', [EquipoController::class, 'index'])->name('equipo');

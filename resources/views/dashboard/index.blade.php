@@ -137,26 +137,28 @@
                 GRAFICO 1
                 </div>
                 <div class="col-sm-5 offset-sm-2 col-md-6 offset-md-0">
-                <div class="info-box mb-3">
-                    <span class="info-box-icon bg-warning elevation-1">
-                        <i class="fas fa-signal"></i>
+                <div class="info-box mb-5">
+                    <span class="info-box-icon bg-primary elevation-1">
+                    <i class="fas fa-user-plus"></i>
                     </span>
-
+                  
                     <div class="info-box-content">
-                        <span class="info-box-text">Equipos</span>
-                        <span class="info-box-number" id="user_online">{{$dashboardInfo['user_online']}}</span>
+                        <span class="info-box-text">Jugadores</span>
+                        <span class="info-box-number" id="jugadores_count">{{$dashboardInfo['jugadores_count']}}</span>
+                        <a href="jugadores" class="btn btn-info">Mostrar Jugadores</a>
                     </div>
                     <!-- /.info-box-content -->
                 </div>
 
-                <div class="info-box mb-3">
-                    <span class="info-box-icon bg-warning elevation-1">
-                        <i class="fas fa-signal"></i>
+                <div class="info-box mb-5">
+                    <span class="info-box-icon bg-primary elevation-1" >
+                       <i class="fas fa-user"></i>
                     </span>
 
                     <div class="info-box-content">
                         <span class="info-box-text">Equipos</span>
-                        <span class="info-box-number" id="user_online">{{$dashboardInfo['user_online']}}</span>
+                        <span class="info-box-number" id="equipos_count">{{$dashboardInfo['equipos_count']}}</span>
+                        <a href="equipo" class="btn btn-info"> Mostrar equipos</a>
                     </div>
                     <!-- /.info-box-content -->
                 </div>
