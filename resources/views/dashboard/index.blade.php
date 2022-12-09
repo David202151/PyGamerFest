@@ -100,6 +100,8 @@
             <div class="row">
                 <div class="col-sm-5 col-md-6">
                 GRAFICO 2
+
+                <div id = "container"> </div>
                 </div>
                 <div class="col-sm-5 offset-sm-2 col-md-6 offset-md-0">
                 <div class="info-box">
@@ -189,13 +191,94 @@
 <!-- /.content -->
 @endsection
 
+
 @push('third_party_scripts')
 <!-- ChartJS -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.5.0/chart.min.js" integrity="sha512-asxKqQghC1oBShyhiBwA+YgotaSYKxGP1rcSYTDrB0U6DxwlJjU59B67U8+5/++uFjcuVM8Hh5cokLjZlhm3Vg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 @endpush
 @push('page_scripts')
 
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/data.js"></script>
+<script src="https://code.highcharts.com/modules/drilldown.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/modules/export-data.js"></script>
+<script src="https://code.highcharts.com/modules/accessibility.js"></script>
 
+<script>
+    Highcharts.chart('container', {
+    chart: {
+        type: 'column'
+    },
+    title: {
+        align: 'left',
+        text: 'Gamer Fest - 2022'
+    },
+    
+    accessibility: {
+        announceNewData: {
+            enabled: true
+        }
+    },
+    xAxis: {
+        type: 'category'
+    },
+    yAxis: {
+        title: {
+            text: 'Visualizacion de registros'
+        }
+
+    },
+    legend: {
+        enabled: false
+    },
+    plotOptions: {
+        series: {
+            borderWidth: 0,
+            dataLabels: {
+                enabled: true,
+                format: '{point.y:.1f}%'
+            }
+        }
+    },
+
+    tooltip: {
+        headerFormat: '<span style="font-size:11px">{series.name}</span><br>',
+        pointFormat: '<span style="color:{point.color}">{point.name}</span>: <b>{point.y:.2f}%</b> of total<br/>'
+    },
+
+    series: [
+        {
+            name: "Tablas",
+            colorByPoint: true,
+            data: [
+                {
+                    name: "Jugadores",
+                    y: {{$dashboardInfo['jugador_count']}},
+                    drilldown: "Chrome"
+                },
+                {
+                    name: "Aula",
+                    y: {{$dashboardInfo['aula_count']}},
+                    drilldown: "Safari"
+                },
+                {
+                    name: "Categorias",
+                    y: {{$dashboardInfo['categoria_count']}},
+                    drilldown: "Firefox"
+                },
+                {
+                    name: "Equipos",
+                    y: {{$dashboardInfo['equipo_count']}},
+                    drilldown: "Edge"
+                },
+                
+            ]
+        }
+    ],
+    
+});
+</script>
 
 
 @endpush

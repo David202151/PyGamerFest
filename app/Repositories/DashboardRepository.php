@@ -21,17 +21,35 @@ class DashboardRepository
     private $permissionRepository;
     /** @var  AttendanceRepository */
     private $attendanceRepository;
+    /** @var JugadorRepository */
+    private $jugadorRepository; 
+    /** @var AulaRepository */
+    private $aulaRepository; 
+    /** @var CategoriaRepository */
+    private $categoriaRepository; 
+    /** @var EquipoRepository */
+    private $equipoRepository; 
+
+        
+
+
     /**
      * Create a new controller instance.
      *
      * @return void
      */
-    public function __construct(RoleRepository $roleRepo, UserRepository $userRepo, PermissionRepository $permissionRepo, AttendanceRepository $attendanceRepo)
+    public function __construct(RoleRepository $roleRepo, UserRepository $userRepo, PermissionRepository $permissionRepo, AttendanceRepository $attendanceRepo,
+     JugadorRepository $jugadorRepo, AulaRepository $aulaRepo, CategoriaRepository $categoriaRepo, EquipoRepository $equipoRepo)
     {
         $this->permissionRepository = $permissionRepo;
         $this->userRepository = $userRepo;
         $this->roleRepository = $roleRepo;
         $this->attendanceRepository = $attendanceRepo;
+        $this->jugadorRepository = $jugadorRepo; 
+        $this->aulaRepository = $aulaRepo; 
+        $this->categoriaRepository = $categoriaRepo; 
+        $this->equipoRepository = $equipoRepo; 
+        
     }
 
     private function getDashboardInfo()
@@ -41,6 +59,11 @@ class DashboardRepository
         $dashboardInfo['role_count'] =  $this->roleRepository->count();
         $dashboardInfo['permission_count'] =  $this->permissionRepository->count();
         $dashboardInfo['user_online'] =  $this->attendanceRepository->CountUserOnline();
+        $dashboardInfo['jugador_count'] =  $this->jugadorRepository->count();
+        $dashboardInfo['aula_count'] =  $this->aulaRepository->count();
+        $dashboardInfo['categoria_count'] =  $this->categoriaRepository->count();
+        $dashboardInfo['equipo_count'] =  $this->equipoRepository->count();
+        
         
         return $dashboardInfo;
     }
