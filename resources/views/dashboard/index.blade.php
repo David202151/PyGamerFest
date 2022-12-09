@@ -99,8 +99,7 @@
         <div class="container text-center">
             <div class="row">
                 <div class="col-sm-5 col-md-6">
-                GRAFICO 2
-
+               
                 <div id = "container"> </div>
                 </div>
                 <div class="col-sm-5 offset-sm-2 col-md-6 offset-md-0">
