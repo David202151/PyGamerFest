@@ -21,17 +21,24 @@ class DashboardRepository
     private $permissionRepository;
     /** @var  AttendanceRepository */
     private $attendanceRepository;
+    /** @var  categoriasRepository */
+    private $categoriasRepository;
+    /** @var  aulasRepository */
+    private $aulasRepository;
     /**
      * Create a new controller instance.
      *
      * @return void
      */
-    public function __construct(RoleRepository $roleRepo, UserRepository $userRepo, PermissionRepository $permissionRepo, AttendanceRepository $attendanceRepo)
+    public function __construct(RoleRepository $roleRepo, UserRepository $userRepo, PermissionRepository $permissionRepo, AttendanceRepository $attendanceRepo,
+           CategoriaRepository $categoriasRepo, AulaRepository $aulasRepo )
     {
         $this->permissionRepository = $permissionRepo;
         $this->userRepository = $userRepo;
         $this->roleRepository = $roleRepo;
         $this->attendanceRepository = $attendanceRepo;
+        $this->categoriasRepository = $categoriasRepo;
+        $this->aulasRepository= $aulasRepo;
     }
 
     private function getDashboardInfo()
@@ -41,6 +48,8 @@ class DashboardRepository
         $dashboardInfo['role_count'] =  $this->roleRepository->count();
         $dashboardInfo['permission_count'] =  $this->permissionRepository->count();
         $dashboardInfo['user_online'] =  $this->attendanceRepository->CountUserOnline();
+        $dashboardInfo['categorias_count'] =  $this->categoriasRepository->count();
+        $dashboardInfo['aulas_count'] =  $this->aulasRepository->count();
         
         return $dashboardInfo;
     }
