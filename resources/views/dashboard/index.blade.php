@@ -103,25 +103,25 @@
                 </div>
                 <div class="col-sm-5 offset-sm-2 col-md-6 offset-md-0">
                 <div class="info-box">
-                    <span class="info-box-icon bg-warning elevation-1">
-                        <i class="fas fa-signal"></i>
+                    <span class="info-box-icon bg-danger elevation-1">
+                    <i class="fas fa-gamepad"></i>
                     </span>
 
                     <div class="info-box-content">
-                        <span class="info-box-text">Equipos</span>
-                        <span class="info-box-number" id="user_online">{{$dashboardInfo['user_online']}}</span>
+                        <span class="info-box-text">Categorias</span>
+                        <span class="info-box-number" id="categorias_count">{{$dashboardInfo['categorias_count']}}</span>
                     </div>
                     <!-- /.info-box-content -->
                 </div>
 
                 <div class="info-box mb-3">
-                    <span class="info-box-icon bg-warning elevation-1">
-                        <i class="fas fa-signal"></i>
+                    <span class="info-box-icon elevation-1">
+                    <i class="fas fa-hotel"></i>
                     </span>
 
                     <div class="info-box-content">
-                        <span class="info-box-text">Equipos</span>
-                        <span class="info-box-number" id="user_online">{{$dashboardInfo['user_online']}}</span>
+                        <span class="info-box-text">Aulas</span>
+                        <span class="info-box-number" id="aulas_count">{{$dashboardInfo['aulas_count']}}</span>
                     </div>
                     <!-- /.info-box-content -->
                 </div>
