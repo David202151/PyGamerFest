@@ -133,8 +133,54 @@
 
         <div class="container text-center">
             <div class="row">
-                <div class="col-sm-5 col-md-6">
-                GRAFICO 1
+                <div class="col-sm-3 col-md-6">
+               <center>
+                <div style="width: 25rem">
+                    <div class="card">
+                        <h3><strong>Vista Usuarios</strong></h3>
+                    </div>
+                    
+                    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.0.1/dist/chart.umd.min.js"></script>
+                <canvas id="myChart" width="100" height="100"></canvas>
+                    <script>
+                    var ctx = document.getElementById('myChart').getContext('2d');
+                    var myChart = new Chart(ctx, {
+                        type: 'doughnut',
+                        data: {
+                            labels: ['Blue', 'Red', 'Green', 'Yellow'],
+                            datasets: [{
+                                label: '# of Votes',
+                                data: [{{$dashboardInfo['user_count']}}, {{$dashboardInfo['user_count']}}, {{$dashboardInfo['permission_count']}}, {{$dashboardInfo['user_online']}}],
+                                backgroundColor: [
+                                    'rgba(54, 162, 235, 1)',
+                                    'rgba(222, 0, 32)',
+                                    'rgba(75, 192, 75)',
+                                    'rgba(255, 181, 0)'
+                                ],
+                                borderColor: [
+                                    'rgba(54, 162, 235, 1)',
+                                    'rgba(222, 0, 32)',
+                                    'rgba(75, 192, 75)',
+                                    'rgba(255, 181, 0)'
+                                ],
+                                borderWidth: 1
+                            }]
+                        },
+                        options: {
+                            scales: {
+                                y: {
+                                    beginAtZero: true
+                                }
+                            }
+                        }
+                    });
+                    </script>
+                    
+                    </div>
+                    </center>
+
+
+
                 </div>
                 <div class="col-sm-5 offset-sm-2 col-md-6 offset-md-0">
                 <div class="info-box mb-3">
